@@ -1,0 +1,7 @@
+# .graphclientrc.yml
+sources:
+  - name: tperp-subgraph
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/tideassets/tperp-subgraph
+
