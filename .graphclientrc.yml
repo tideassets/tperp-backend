@@ -3,5 +3,5 @@ sources:
   - name: tperp-subgraph
     handler:
       graphql:
-        endpoint: https://api.thegraph.com/subgraphs/name/tideassets/tperp-subgraph
-
+        #endpoint: https://api.thegraph.com/subgraphs/name/tideassets/tperp-subgraph
+        endpoint: http://127.0.0.1:8000/subgraphs/name/example/

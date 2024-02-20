@@ -177,6 +177,123 @@ input Block_height {
 
 scalar Bytes
 
+type Candle {
+  id: ID!
+  marketAddress: String!
+  period: String!
+  timestamp: Int!
+  open: BigInt!
+  close: BigInt!
+  high: BigInt!
+  low: BigInt!
+}
+
+input Candle_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  marketAddress: String
+  marketAddress_not: String
+  marketAddress_gt: String
+  marketAddress_lt: String
+  marketAddress_gte: String
+  marketAddress_lte: String
+  marketAddress_in: [String!]
+  marketAddress_not_in: [String!]
+  marketAddress_contains: String
+  marketAddress_contains_nocase: String
+  marketAddress_not_contains: String
+  marketAddress_not_contains_nocase: String
+  marketAddress_starts_with: String
+  marketAddress_starts_with_nocase: String
+  marketAddress_not_starts_with: String
+  marketAddress_not_starts_with_nocase: String
+  marketAddress_ends_with: String
+  marketAddress_ends_with_nocase: String
+  marketAddress_not_ends_with: String
+  marketAddress_not_ends_with_nocase: String
+  period: String
+  period_not: String
+  period_gt: String
+  period_lt: String
+  period_gte: String
+  period_lte: String
+  period_in: [String!]
+  period_not_in: [String!]
+  period_contains: String
+  period_contains_nocase: String
+  period_not_contains: String
+  period_not_contains_nocase: String
+  period_starts_with: String
+  period_starts_with_nocase: String
+  period_not_starts_with: String
+  period_not_starts_with_nocase: String
+  period_ends_with: String
+  period_ends_with_nocase: String
+  period_not_ends_with: String
+  period_not_ends_with_nocase: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_gt: Int
+  timestamp_lt: Int
+  timestamp_gte: Int
+  timestamp_lte: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  open: BigInt
+  open_not: BigInt
+  open_gt: BigInt
+  open_lt: BigInt
+  open_gte: BigInt
+  open_lte: BigInt
+  open_in: [BigInt!]
+  open_not_in: [BigInt!]
+  close: BigInt
+  close_not: BigInt
+  close_gt: BigInt
+  close_lt: BigInt
+  close_gte: BigInt
+  close_lte: BigInt
+  close_in: [BigInt!]
+  close_not_in: [BigInt!]
+  high: BigInt
+  high_not: BigInt
+  high_gt: BigInt
+  high_lt: BigInt
+  high_gte: BigInt
+  high_lte: BigInt
+  high_in: [BigInt!]
+  high_not_in: [BigInt!]
+  low: BigInt
+  low_not: BigInt
+  low_gt: BigInt
+  low_lt: BigInt
+  low_gte: BigInt
+  low_lte: BigInt
+  low_in: [BigInt!]
+  low_not_in: [BigInt!]
+  """Filter for the block changed event."""
+  _change_block: BlockChangedFilter
+  and: [Candle_filter]
+  or: [Candle_filter]
+}
+
+enum Candle_orderBy {
+  id
+  marketAddress
+  period
+  timestamp
+  open
+  close
+  high
+  low
+}
+
 type ClaimAction {
   id: ID!
   eventName: ClaimActionType!
@@ -424,6 +541,261 @@ input ClaimRef_filter {
 
 enum ClaimRef_orderBy {
   id
+}
+
+type ClaimableCollateral {
+  id: ID!
+  account: String!
+  marketAddress: String!
+  tokenAddress: String!
+  timeKey: String!
+  value: BigInt!
+  claimed: Boolean!
+  factor: BigInt!
+  factorByTime: BigInt!
+}
+
+type ClaimableCollateralGroup {
+  id: ID!
+  timeKey: String!
+  marketAddress: String!
+  tokenAddress: String!
+  factor: BigInt!
+  claimables(skip: Int = 0, first: Int = 100, orderBy: ClaimableCollateral_orderBy, orderDirection: OrderDirection, where: ClaimableCollateral_filter): [ClaimableCollateral!]!
+}
+
+input ClaimableCollateralGroup_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  timeKey: String
+  timeKey_not: String
+  timeKey_gt: String
+  timeKey_lt: String
+  timeKey_gte: String
+  timeKey_lte: String
+  timeKey_in: [String!]
+  timeKey_not_in: [String!]
+  timeKey_contains: String
+  timeKey_contains_nocase: String
+  timeKey_not_contains: String
+  timeKey_not_contains_nocase: String
+  timeKey_starts_with: String
+  timeKey_starts_with_nocase: String
+  timeKey_not_starts_with: String
+  timeKey_not_starts_with_nocase: String
+  timeKey_ends_with: String
+  timeKey_ends_with_nocase: String
+  timeKey_not_ends_with: String
+  timeKey_not_ends_with_nocase: String
+  marketAddress: String
+  marketAddress_not: String
+  marketAddress_gt: String
+  marketAddress_lt: String
+  marketAddress_gte: String
+  marketAddress_lte: String
+  marketAddress_in: [String!]
+  marketAddress_not_in: [String!]
+  marketAddress_contains: String
+  marketAddress_contains_nocase: String
+  marketAddress_not_contains: String
+  marketAddress_not_contains_nocase: String
+  marketAddress_starts_with: String
+  marketAddress_starts_with_nocase: String
+  marketAddress_not_starts_with: String
+  marketAddress_not_starts_with_nocase: String
+  marketAddress_ends_with: String
+  marketAddress_ends_with_nocase: String
+  marketAddress_not_ends_with: String
+  marketAddress_not_ends_with_nocase: String
+  tokenAddress: String
+  tokenAddress_not: String
+  tokenAddress_gt: String
+  tokenAddress_lt: String
+  tokenAddress_gte: String
+  tokenAddress_lte: String
+  tokenAddress_in: [String!]
+  tokenAddress_not_in: [String!]
+  tokenAddress_contains: String
+  tokenAddress_contains_nocase: String
+  tokenAddress_not_contains: String
+  tokenAddress_not_contains_nocase: String
+  tokenAddress_starts_with: String
+  tokenAddress_starts_with_nocase: String
+  tokenAddress_not_starts_with: String
+  tokenAddress_not_starts_with_nocase: String
+  tokenAddress_ends_with: String
+  tokenAddress_ends_with_nocase: String
+  tokenAddress_not_ends_with: String
+  tokenAddress_not_ends_with_nocase: String
+  factor: BigInt
+  factor_not: BigInt
+  factor_gt: BigInt
+  factor_lt: BigInt
+  factor_gte: BigInt
+  factor_lte: BigInt
+  factor_in: [BigInt!]
+  factor_not_in: [BigInt!]
+  claimables: [String!]
+  claimables_not: [String!]
+  claimables_contains: [String!]
+  claimables_contains_nocase: [String!]
+  claimables_not_contains: [String!]
+  claimables_not_contains_nocase: [String!]
+  claimables_: ClaimableCollateral_filter
+  """Filter for the block changed event."""
+  _change_block: BlockChangedFilter
+  and: [ClaimableCollateralGroup_filter]
+  or: [ClaimableCollateralGroup_filter]
+}
+
+enum ClaimableCollateralGroup_orderBy {
+  id
+  timeKey
+  marketAddress
+  tokenAddress
+  factor
+  claimables
+}
+
+input ClaimableCollateral_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  account: String
+  account_not: String
+  account_gt: String
+  account_lt: String
+  account_gte: String
+  account_lte: String
+  account_in: [String!]
+  account_not_in: [String!]
+  account_contains: String
+  account_contains_nocase: String
+  account_not_contains: String
+  account_not_contains_nocase: String
+  account_starts_with: String
+  account_starts_with_nocase: String
+  account_not_starts_with: String
+  account_not_starts_with_nocase: String
+  account_ends_with: String
+  account_ends_with_nocase: String
+  account_not_ends_with: String
+  account_not_ends_with_nocase: String
+  marketAddress: String
+  marketAddress_not: String
+  marketAddress_gt: String
+  marketAddress_lt: String
+  marketAddress_gte: String
+  marketAddress_lte: String
+  marketAddress_in: [String!]
+  marketAddress_not_in: [String!]
+  marketAddress_contains: String
+  marketAddress_contains_nocase: String
+  marketAddress_not_contains: String
+  marketAddress_not_contains_nocase: String
+  marketAddress_starts_with: String
+  marketAddress_starts_with_nocase: String
+  marketAddress_not_starts_with: String
+  marketAddress_not_starts_with_nocase: String
+  marketAddress_ends_with: String
+  marketAddress_ends_with_nocase: String
+  marketAddress_not_ends_with: String
+  marketAddress_not_ends_with_nocase: String
+  tokenAddress: String
+  tokenAddress_not: String
+  tokenAddress_gt: String
+  tokenAddress_lt: String
+  tokenAddress_gte: String
+  tokenAddress_lte: String
+  tokenAddress_in: [String!]
+  tokenAddress_not_in: [String!]
+  tokenAddress_contains: String
+  tokenAddress_contains_nocase: String
+  tokenAddress_not_contains: String
+  tokenAddress_not_contains_nocase: String
+  tokenAddress_starts_with: String
+  tokenAddress_starts_with_nocase: String
+  tokenAddress_not_starts_with: String
+  tokenAddress_not_starts_with_nocase: String
+  tokenAddress_ends_with: String
+  tokenAddress_ends_with_nocase: String
+  tokenAddress_not_ends_with: String
+  tokenAddress_not_ends_with_nocase: String
+  timeKey: String
+  timeKey_not: String
+  timeKey_gt: String
+  timeKey_lt: String
+  timeKey_gte: String
+  timeKey_lte: String
+  timeKey_in: [String!]
+  timeKey_not_in: [String!]
+  timeKey_contains: String
+  timeKey_contains_nocase: String
+  timeKey_not_contains: String
+  timeKey_not_contains_nocase: String
+  timeKey_starts_with: String
+  timeKey_starts_with_nocase: String
+  timeKey_not_starts_with: String
+  timeKey_not_starts_with_nocase: String
+  timeKey_ends_with: String
+  timeKey_ends_with_nocase: String
+  timeKey_not_ends_with: String
+  timeKey_not_ends_with_nocase: String
+  value: BigInt
+  value_not: BigInt
+  value_gt: BigInt
+  value_lt: BigInt
+  value_gte: BigInt
+  value_lte: BigInt
+  value_in: [BigInt!]
+  value_not_in: [BigInt!]
+  claimed: Boolean
+  claimed_not: Boolean
+  claimed_in: [Boolean!]
+  claimed_not_in: [Boolean!]
+  factor: BigInt
+  factor_not: BigInt
+  factor_gt: BigInt
+  factor_lt: BigInt
+  factor_gte: BigInt
+  factor_lte: BigInt
+  factor_in: [BigInt!]
+  factor_not_in: [BigInt!]
+  factorByTime: BigInt
+  factorByTime_not: BigInt
+  factorByTime_gt: BigInt
+  factorByTime_lt: BigInt
+  factorByTime_gte: BigInt
+  factorByTime_lte: BigInt
+  factorByTime_in: [BigInt!]
+  factorByTime_not_in: [BigInt!]
+  """Filter for the block changed event."""
+  _change_block: BlockChangedFilter
+  and: [ClaimableCollateral_filter]
+  or: [ClaimableCollateral_filter]
+}
+
+enum ClaimableCollateral_orderBy {
+  id
+  account
+  marketAddress
+  tokenAddress
+  timeKey
+  value
+  claimed
+  factor
+  factorByTime
 }
 
 type ClaimableFundingFeeInfo {
@@ -2553,6 +2925,9 @@ type PositionIncrease {
   collateralTokenAddress: String!
   collateralTokenPriceMin: BigInt!
   collateralTokenPriceMax: BigInt!
+  indexTokenPriceMin: BigInt!
+  indexTokenPriceMax: BigInt!
+  fundingFeeAmountPerSize: BigInt!
   sizeInUsd: BigInt!
   sizeInTokens: BigInt!
   collateralAmount: BigInt!
@@ -2560,14 +2935,12 @@ type PositionIncrease {
   sizeDeltaInTokens: BigInt!
   collateralDeltaAmount: BigInt!
   executionPrice: BigInt!
-  priceImpactDiffUsd: BigInt!
   orderType: BigInt!
   borrowingFactor: BigInt!
-  longTokenFundingAmountPerSize: BigInt!
-  shortTokenFundingAmountPerSize: BigInt!
+  longTokenFundingAmountPerSize: BigInt
+  shortTokenFundingAmountPerSize: BigInt
   priceImpactAmount: BigInt!
   priceImpactUsd: BigInt!
-  basePnlUsd: BigInt!
   isLong: Boolean!
   transaction: Transaction
 }
@@ -2697,6 +3070,30 @@ input PositionIncrease_filter {
   collateralTokenPriceMax_lte: BigInt
   collateralTokenPriceMax_in: [BigInt!]
   collateralTokenPriceMax_not_in: [BigInt!]
+  indexTokenPriceMin: BigInt
+  indexTokenPriceMin_not: BigInt
+  indexTokenPriceMin_gt: BigInt
+  indexTokenPriceMin_lt: BigInt
+  indexTokenPriceMin_gte: BigInt
+  indexTokenPriceMin_lte: BigInt
+  indexTokenPriceMin_in: [BigInt!]
+  indexTokenPriceMin_not_in: [BigInt!]
+  indexTokenPriceMax: BigInt
+  indexTokenPriceMax_not: BigInt
+  indexTokenPriceMax_gt: BigInt
+  indexTokenPriceMax_lt: BigInt
+  indexTokenPriceMax_gte: BigInt
+  indexTokenPriceMax_lte: BigInt
+  indexTokenPriceMax_in: [BigInt!]
+  indexTokenPriceMax_not_in: [BigInt!]
+  fundingFeeAmountPerSize: BigInt
+  fundingFeeAmountPerSize_not: BigInt
+  fundingFeeAmountPerSize_gt: BigInt
+  fundingFeeAmountPerSize_lt: BigInt
+  fundingFeeAmountPerSize_gte: BigInt
+  fundingFeeAmountPerSize_lte: BigInt
+  fundingFeeAmountPerSize_in: [BigInt!]
+  fundingFeeAmountPerSize_not_in: [BigInt!]
   sizeInUsd: BigInt
   sizeInUsd_not: BigInt
   sizeInUsd_gt: BigInt
@@ -2753,14 +3150,6 @@ input PositionIncrease_filter {
   executionPrice_lte: BigInt
   executionPrice_in: [BigInt!]
   executionPrice_not_in: [BigInt!]
-  priceImpactDiffUsd: BigInt
-  priceImpactDiffUsd_not: BigInt
-  priceImpactDiffUsd_gt: BigInt
-  priceImpactDiffUsd_lt: BigInt
-  priceImpactDiffUsd_gte: BigInt
-  priceImpactDiffUsd_lte: BigInt
-  priceImpactDiffUsd_in: [BigInt!]
-  priceImpactDiffUsd_not_in: [BigInt!]
   orderType: BigInt
   orderType_not: BigInt
   orderType_gt: BigInt
@@ -2809,14 +3198,6 @@ input PositionIncrease_filter {
   priceImpactUsd_lte: BigInt
   priceImpactUsd_in: [BigInt!]
   priceImpactUsd_not_in: [BigInt!]
-  basePnlUsd: BigInt
-  basePnlUsd_not: BigInt
-  basePnlUsd_gt: BigInt
-  basePnlUsd_lt: BigInt
-  basePnlUsd_gte: BigInt
-  basePnlUsd_lte: BigInt
-  basePnlUsd_in: [BigInt!]
-  basePnlUsd_not_in: [BigInt!]
   isLong: Boolean
   isLong_not: Boolean
   isLong_in: [Boolean!]
@@ -2857,6 +3238,9 @@ enum PositionIncrease_orderBy {
   collateralTokenAddress
   collateralTokenPriceMin
   collateralTokenPriceMax
+  indexTokenPriceMin
+  indexTokenPriceMax
+  fundingFeeAmountPerSize
   sizeInUsd
   sizeInTokens
   collateralAmount
@@ -2864,14 +3248,12 @@ enum PositionIncrease_orderBy {
   sizeDeltaInTokens
   collateralDeltaAmount
   executionPrice
-  priceImpactDiffUsd
   orderType
   borrowingFactor
   longTokenFundingAmountPerSize
   shortTokenFundingAmountPerSize
   priceImpactAmount
   priceImpactUsd
-  basePnlUsd
   isLong
   transaction
   transaction__id
@@ -2993,6 +3375,32 @@ enum PositionVolumeInfo_orderBy {
 }
 
 type Query {
+  candle(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Candle
+  candles(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Candle_orderBy
+    orderDirection: OrderDirection
+    where: Candle_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Candle!]!
   affiliateRewardUpdate(
     id: ID!
     """
@@ -3123,6 +3531,58 @@ type Query {
     """
     subgraphError: _SubgraphErrorPolicy_! = deny
   ): [PositionFeesInfo!]!
+  claimableCollateral(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): ClaimableCollateral
+  claimableCollaterals(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: ClaimableCollateral_orderBy
+    orderDirection: OrderDirection
+    where: ClaimableCollateral_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [ClaimableCollateral!]!
+  claimableCollateralGroup(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): ClaimableCollateralGroup
+  claimableCollateralGroups(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: ClaimableCollateralGroup_orderBy
+    orderDirection: OrderDirection
+    where: ClaimableCollateralGroup_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [ClaimableCollateralGroup!]!
   swapInfo(
     id: ID!
     """
@@ -3999,6 +4459,32 @@ enum SellUSDG_orderBy {
 }
 
 type Subscription {
+  candle(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Candle
+  candles(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Candle_orderBy
+    orderDirection: OrderDirection
+    where: Candle_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Candle!]!
   affiliateRewardUpdate(
     id: ID!
     """
@@ -4129,6 +4615,58 @@ type Subscription {
     """
     subgraphError: _SubgraphErrorPolicy_! = deny
   ): [PositionFeesInfo!]!
+  claimableCollateral(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): ClaimableCollateral
+  claimableCollaterals(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: ClaimableCollateral_orderBy
+    orderDirection: OrderDirection
+    where: ClaimableCollateral_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [ClaimableCollateral!]!
+  claimableCollateralGroup(
+    id: ID!
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): ClaimableCollateralGroup
+  claimableCollateralGroups(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: ClaimableCollateralGroup_orderBy
+    orderDirection: OrderDirection
+    where: ClaimableCollateralGroup_filter
+    """
+    The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+    """
+    block: Block_height
+    """
+    Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+    """
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [ClaimableCollateralGroup!]!
   swapInfo(
     id: ID!
     """
@@ -5489,6 +6027,7 @@ type TokenPrice {
   id: ID!
   minPrice: BigInt!
   maxPrice: BigInt!
+  updateAt: BigInt!
 }
 
 input TokenPrice_filter {
@@ -5516,6 +6055,14 @@ input TokenPrice_filter {
   maxPrice_lte: BigInt
   maxPrice_in: [BigInt!]
   maxPrice_not_in: [BigInt!]
+  updateAt: BigInt
+  updateAt_not: BigInt
+  updateAt_gt: BigInt
+  updateAt_lt: BigInt
+  updateAt_gte: BigInt
+  updateAt_lte: BigInt
+  updateAt_in: [BigInt!]
+  updateAt_not_in: [BigInt!]
   """Filter for the block changed event."""
   _change_block: BlockChangedFilter
   and: [TokenPrice_filter]
@@ -5526,6 +6073,7 @@ enum TokenPrice_orderBy {
   id
   minPrice
   maxPrice
+  updateAt
 }
 
 type TradeAction {
@@ -5553,6 +6101,7 @@ type TradeAction {
   borrowingFeeAmount: BigInt
   fundingFeeAmount: BigInt
   pnlUsd: BigInt
+  basePnlUsd: BigInt
   isLong: Boolean
   minOutputAmount: BigInt
   executionAmountOut: BigInt
@@ -5821,6 +6370,14 @@ input TradeAction_filter {
   pnlUsd_lte: BigInt
   pnlUsd_in: [BigInt!]
   pnlUsd_not_in: [BigInt!]
+  basePnlUsd: BigInt
+  basePnlUsd_not: BigInt
+  basePnlUsd_gt: BigInt
+  basePnlUsd_lt: BigInt
+  basePnlUsd_gte: BigInt
+  basePnlUsd_lte: BigInt
+  basePnlUsd_in: [BigInt!]
+  basePnlUsd_not_in: [BigInt!]
   isLong: Boolean
   isLong_not: Boolean
   isLong_in: [Boolean!]
@@ -5927,6 +6484,7 @@ enum TradeAction_orderBy {
   borrowingFeeAmount
   fundingFeeAmount
   pnlUsd
+  basePnlUsd
   isLong
   minOutputAmount
   executionAmountOut

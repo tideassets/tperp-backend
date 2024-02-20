@@ -9,6 +9,9 @@ const tokens_config = {
   "arbitrum-sepolia": {
     WETH: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
   },
+  localhost: {
+    WETH: "0x2bdcc0de6be1f7d2ee689a0342d76f52e8efaba3",
+  },
 };
 
 require("dotenv").config();
@@ -36,7 +39,6 @@ interface Candle {
   period: string;
 }
 
-
 const getTickersData: () => Promise<PriceTicker[]> = async () => {
   const data: PriceTicker[] = [];
   for (let tokenSymbol in network_tokens) {
@@ -46,18 +48,23 @@ const getTickersData: () => Promise<PriceTicker[]> = async () => {
       tokenPrice(id: "${tokenAddress}") {
         minPrice
         maxPrice
-        updatedAt
+        updateAt
       }
     }`;
-    const result = await execute(query, {});
-    let tokenPrice = result.data.tokenPrice;
-    data.push({
-      tokenAddress: tokenAddress,
-      tokenSymbol: tokenSymbol,
-      minPrice: tokenPrice.minPrice,
-      maxPrice: tokenPrice.maxPrice,
-      updatedAt: tokenPrice.updatedAt,
-    });
+    try {
+      const result = await execute(query, {});
+      console.log(result);
+      let tokenPrice = result.data.tokenPrice;
+      data.push({
+        tokenAddress: tokenAddress,
+        tokenSymbol: tokenSymbol,
+        minPrice: tokenPrice.minPrice,
+        maxPrice: tokenPrice.maxPrice,
+        updatedAt: tokenPrice.updatedAt,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
   return data;
 };
@@ -91,20 +98,26 @@ const getCandlesData: (
   let tokenAddress = network_tokens[tokenSymbol];
 
   const query = gql`
-  query queryCandles {
-    candles(
-      orderBy: timestamp,
-      orderDirection: desc,
-      first: "${limit}", 
-      where: {marketAddress: "${tokenAddress}"}, period: "${period}"}
+    query queryCandles {
+      candles(
+        where: {
+          marketAddress: "${tokenAddress}"
+          period: "${period}"
+        }
+        first: ${limit}
+        orderBy: timestamp
+        orderDirection: desc
       ) {
-        timestamp
         open
-        close
-        high
         low
-      }`;
-
+        id
+        high
+        close
+        timestamp
+      }
+    }
+  `;
+  console.log(query);
   const result = await execute(query, {});
   const data: Candle[] = result.data.candles.map((candle: any) => ({
     candles: [
@@ -122,21 +135,33 @@ const getCandlesData: (
 
 export class Controller {
   public async getPriceTickers(req: Request, res: Response): Promise<void> {
-    const data: PriceTicker[] = await getTickersData();
-    res.json(data);
+    try {
+      const data: PriceTicker[] = await getTickersData();
+      res.json(data);
+    } catch (error) {
+      res.status(400).json({ error: error });
+    }
   }
 
   public async get24hPrices(req: Request, res: Response): Promise<void> {
-    const data: Price24h[] = await get24hPricesData();
-    res.json(data);
+    try {
+      const data: Price24h[] = await get24hPricesData();
+      res.json(data);
+    } catch (error) {
+      res.status(400).json({ error: error });
+    }
   }
 
   public async getCandles(req: Request, res: Response): Promise<void> {
-    const data: Candle[] = await getCandlesData(
-      req.query.tokenSymbol as string,
-      req.query.period as string,
-      Number(req.query.limit as string)
-    );
-    res.json(data);
+    try {
+      const data: Candle[] = await getCandlesData(
+        req.query.tokenSymbol as string,
+        req.query.period as string,
+        Number(req.query.limit as string)
+      );
+      res.json(data);
+    } catch (error) {
+      res.status(400).json({ error: error });
+    }
   }
 }

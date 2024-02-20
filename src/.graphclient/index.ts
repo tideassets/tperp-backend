@@ -198,6 +198,122 @@ export type Block_height = {
   number_gte?: InputMaybe<Scalars['Int']>;
 };
 
+export type Candle = {
+  id: Scalars['ID'];
+  marketAddress: Scalars['String'];
+  period: Scalars['String'];
+  timestamp: Scalars['Int'];
+  open: Scalars['BigInt'];
+  close: Scalars['BigInt'];
+  high: Scalars['BigInt'];
+  low: Scalars['BigInt'];
+};
+
+export type Candle_filter = {
+  id?: InputMaybe<Scalars['ID']>;
+  id_not?: InputMaybe<Scalars['ID']>;
+  id_gt?: InputMaybe<Scalars['ID']>;
+  id_lt?: InputMaybe<Scalars['ID']>;
+  id_gte?: InputMaybe<Scalars['ID']>;
+  id_lte?: InputMaybe<Scalars['ID']>;
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  marketAddress?: InputMaybe<Scalars['String']>;
+  marketAddress_not?: InputMaybe<Scalars['String']>;
+  marketAddress_gt?: InputMaybe<Scalars['String']>;
+  marketAddress_lt?: InputMaybe<Scalars['String']>;
+  marketAddress_gte?: InputMaybe<Scalars['String']>;
+  marketAddress_lte?: InputMaybe<Scalars['String']>;
+  marketAddress_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_not_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  period?: InputMaybe<Scalars['String']>;
+  period_not?: InputMaybe<Scalars['String']>;
+  period_gt?: InputMaybe<Scalars['String']>;
+  period_lt?: InputMaybe<Scalars['String']>;
+  period_gte?: InputMaybe<Scalars['String']>;
+  period_lte?: InputMaybe<Scalars['String']>;
+  period_in?: InputMaybe<Array<Scalars['String']>>;
+  period_not_in?: InputMaybe<Array<Scalars['String']>>;
+  period_contains?: InputMaybe<Scalars['String']>;
+  period_contains_nocase?: InputMaybe<Scalars['String']>;
+  period_not_contains?: InputMaybe<Scalars['String']>;
+  period_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  period_starts_with?: InputMaybe<Scalars['String']>;
+  period_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  period_not_starts_with?: InputMaybe<Scalars['String']>;
+  period_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  period_ends_with?: InputMaybe<Scalars['String']>;
+  period_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  period_not_ends_with?: InputMaybe<Scalars['String']>;
+  period_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  timestamp?: InputMaybe<Scalars['Int']>;
+  timestamp_not?: InputMaybe<Scalars['Int']>;
+  timestamp_gt?: InputMaybe<Scalars['Int']>;
+  timestamp_lt?: InputMaybe<Scalars['Int']>;
+  timestamp_gte?: InputMaybe<Scalars['Int']>;
+  timestamp_lte?: InputMaybe<Scalars['Int']>;
+  timestamp_in?: InputMaybe<Array<Scalars['Int']>>;
+  timestamp_not_in?: InputMaybe<Array<Scalars['Int']>>;
+  open?: InputMaybe<Scalars['BigInt']>;
+  open_not?: InputMaybe<Scalars['BigInt']>;
+  open_gt?: InputMaybe<Scalars['BigInt']>;
+  open_lt?: InputMaybe<Scalars['BigInt']>;
+  open_gte?: InputMaybe<Scalars['BigInt']>;
+  open_lte?: InputMaybe<Scalars['BigInt']>;
+  open_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  open_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  close?: InputMaybe<Scalars['BigInt']>;
+  close_not?: InputMaybe<Scalars['BigInt']>;
+  close_gt?: InputMaybe<Scalars['BigInt']>;
+  close_lt?: InputMaybe<Scalars['BigInt']>;
+  close_gte?: InputMaybe<Scalars['BigInt']>;
+  close_lte?: InputMaybe<Scalars['BigInt']>;
+  close_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  close_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  high?: InputMaybe<Scalars['BigInt']>;
+  high_not?: InputMaybe<Scalars['BigInt']>;
+  high_gt?: InputMaybe<Scalars['BigInt']>;
+  high_lt?: InputMaybe<Scalars['BigInt']>;
+  high_gte?: InputMaybe<Scalars['BigInt']>;
+  high_lte?: InputMaybe<Scalars['BigInt']>;
+  high_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  high_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  low?: InputMaybe<Scalars['BigInt']>;
+  low_not?: InputMaybe<Scalars['BigInt']>;
+  low_gt?: InputMaybe<Scalars['BigInt']>;
+  low_lt?: InputMaybe<Scalars['BigInt']>;
+  low_gte?: InputMaybe<Scalars['BigInt']>;
+  low_lte?: InputMaybe<Scalars['BigInt']>;
+  low_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  low_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  /** Filter for the block changed event. */
+  _change_block?: InputMaybe<BlockChangedFilter>;
+  and?: InputMaybe<Array<InputMaybe<Candle_filter>>>;
+  or?: InputMaybe<Array<InputMaybe<Candle_filter>>>;
+};
+
+export type Candle_orderBy =
+  | 'id'
+  | 'marketAddress'
+  | 'period'
+  | 'timestamp'
+  | 'open'
+  | 'close'
+  | 'high'
+  | 'low';
+
 export type ClaimAction = {
   id: Scalars['ID'];
   eventName: ClaimActionType;
@@ -442,6 +558,268 @@ export type ClaimRef_filter = {
 
 export type ClaimRef_orderBy =
   | 'id';
+
+export type ClaimableCollateral = {
+  id: Scalars['ID'];
+  account: Scalars['String'];
+  marketAddress: Scalars['String'];
+  tokenAddress: Scalars['String'];
+  timeKey: Scalars['String'];
+  value: Scalars['BigInt'];
+  claimed: Scalars['Boolean'];
+  factor: Scalars['BigInt'];
+  factorByTime: Scalars['BigInt'];
+};
+
+export type ClaimableCollateralGroup = {
+  id: Scalars['ID'];
+  timeKey: Scalars['String'];
+  marketAddress: Scalars['String'];
+  tokenAddress: Scalars['String'];
+  factor: Scalars['BigInt'];
+  claimables: Array<ClaimableCollateral>;
+};
+
+
+export type ClaimableCollateralGroupclaimablesArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ClaimableCollateral_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<ClaimableCollateral_filter>;
+};
+
+export type ClaimableCollateralGroup_filter = {
+  id?: InputMaybe<Scalars['ID']>;
+  id_not?: InputMaybe<Scalars['ID']>;
+  id_gt?: InputMaybe<Scalars['ID']>;
+  id_lt?: InputMaybe<Scalars['ID']>;
+  id_gte?: InputMaybe<Scalars['ID']>;
+  id_lte?: InputMaybe<Scalars['ID']>;
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  timeKey?: InputMaybe<Scalars['String']>;
+  timeKey_not?: InputMaybe<Scalars['String']>;
+  timeKey_gt?: InputMaybe<Scalars['String']>;
+  timeKey_lt?: InputMaybe<Scalars['String']>;
+  timeKey_gte?: InputMaybe<Scalars['String']>;
+  timeKey_lte?: InputMaybe<Scalars['String']>;
+  timeKey_in?: InputMaybe<Array<Scalars['String']>>;
+  timeKey_not_in?: InputMaybe<Array<Scalars['String']>>;
+  timeKey_contains?: InputMaybe<Scalars['String']>;
+  timeKey_contains_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_contains?: InputMaybe<Scalars['String']>;
+  timeKey_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_starts_with?: InputMaybe<Scalars['String']>;
+  timeKey_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_starts_with?: InputMaybe<Scalars['String']>;
+  timeKey_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_ends_with?: InputMaybe<Scalars['String']>;
+  timeKey_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_ends_with?: InputMaybe<Scalars['String']>;
+  timeKey_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress?: InputMaybe<Scalars['String']>;
+  marketAddress_not?: InputMaybe<Scalars['String']>;
+  marketAddress_gt?: InputMaybe<Scalars['String']>;
+  marketAddress_lt?: InputMaybe<Scalars['String']>;
+  marketAddress_gte?: InputMaybe<Scalars['String']>;
+  marketAddress_lte?: InputMaybe<Scalars['String']>;
+  marketAddress_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_not_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress?: InputMaybe<Scalars['String']>;
+  tokenAddress_not?: InputMaybe<Scalars['String']>;
+  tokenAddress_gt?: InputMaybe<Scalars['String']>;
+  tokenAddress_lt?: InputMaybe<Scalars['String']>;
+  tokenAddress_gte?: InputMaybe<Scalars['String']>;
+  tokenAddress_lte?: InputMaybe<Scalars['String']>;
+  tokenAddress_in?: InputMaybe<Array<Scalars['String']>>;
+  tokenAddress_not_in?: InputMaybe<Array<Scalars['String']>>;
+  tokenAddress_contains?: InputMaybe<Scalars['String']>;
+  tokenAddress_contains_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_contains?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_starts_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_starts_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_ends_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_ends_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  factor?: InputMaybe<Scalars['BigInt']>;
+  factor_not?: InputMaybe<Scalars['BigInt']>;
+  factor_gt?: InputMaybe<Scalars['BigInt']>;
+  factor_lt?: InputMaybe<Scalars['BigInt']>;
+  factor_gte?: InputMaybe<Scalars['BigInt']>;
+  factor_lte?: InputMaybe<Scalars['BigInt']>;
+  factor_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  factor_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  claimables?: InputMaybe<Array<Scalars['String']>>;
+  claimables_not?: InputMaybe<Array<Scalars['String']>>;
+  claimables_contains?: InputMaybe<Array<Scalars['String']>>;
+  claimables_contains_nocase?: InputMaybe<Array<Scalars['String']>>;
+  claimables_not_contains?: InputMaybe<Array<Scalars['String']>>;
+  claimables_not_contains_nocase?: InputMaybe<Array<Scalars['String']>>;
+  claimables_?: InputMaybe<ClaimableCollateral_filter>;
+  /** Filter for the block changed event. */
+  _change_block?: InputMaybe<BlockChangedFilter>;
+  and?: InputMaybe<Array<InputMaybe<ClaimableCollateralGroup_filter>>>;
+  or?: InputMaybe<Array<InputMaybe<ClaimableCollateralGroup_filter>>>;
+};
+
+export type ClaimableCollateralGroup_orderBy =
+  | 'id'
+  | 'timeKey'
+  | 'marketAddress'
+  | 'tokenAddress'
+  | 'factor'
+  | 'claimables';
+
+export type ClaimableCollateral_filter = {
+  id?: InputMaybe<Scalars['ID']>;
+  id_not?: InputMaybe<Scalars['ID']>;
+  id_gt?: InputMaybe<Scalars['ID']>;
+  id_lt?: InputMaybe<Scalars['ID']>;
+  id_gte?: InputMaybe<Scalars['ID']>;
+  id_lte?: InputMaybe<Scalars['ID']>;
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  account?: InputMaybe<Scalars['String']>;
+  account_not?: InputMaybe<Scalars['String']>;
+  account_gt?: InputMaybe<Scalars['String']>;
+  account_lt?: InputMaybe<Scalars['String']>;
+  account_gte?: InputMaybe<Scalars['String']>;
+  account_lte?: InputMaybe<Scalars['String']>;
+  account_in?: InputMaybe<Array<Scalars['String']>>;
+  account_not_in?: InputMaybe<Array<Scalars['String']>>;
+  account_contains?: InputMaybe<Scalars['String']>;
+  account_contains_nocase?: InputMaybe<Scalars['String']>;
+  account_not_contains?: InputMaybe<Scalars['String']>;
+  account_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  account_starts_with?: InputMaybe<Scalars['String']>;
+  account_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  account_not_starts_with?: InputMaybe<Scalars['String']>;
+  account_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  account_ends_with?: InputMaybe<Scalars['String']>;
+  account_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  account_not_ends_with?: InputMaybe<Scalars['String']>;
+  account_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress?: InputMaybe<Scalars['String']>;
+  marketAddress_not?: InputMaybe<Scalars['String']>;
+  marketAddress_gt?: InputMaybe<Scalars['String']>;
+  marketAddress_lt?: InputMaybe<Scalars['String']>;
+  marketAddress_gte?: InputMaybe<Scalars['String']>;
+  marketAddress_lte?: InputMaybe<Scalars['String']>;
+  marketAddress_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_not_in?: InputMaybe<Array<Scalars['String']>>;
+  marketAddress_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains?: InputMaybe<Scalars['String']>;
+  marketAddress_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with?: InputMaybe<Scalars['String']>;
+  marketAddress_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress?: InputMaybe<Scalars['String']>;
+  tokenAddress_not?: InputMaybe<Scalars['String']>;
+  tokenAddress_gt?: InputMaybe<Scalars['String']>;
+  tokenAddress_lt?: InputMaybe<Scalars['String']>;
+  tokenAddress_gte?: InputMaybe<Scalars['String']>;
+  tokenAddress_lte?: InputMaybe<Scalars['String']>;
+  tokenAddress_in?: InputMaybe<Array<Scalars['String']>>;
+  tokenAddress_not_in?: InputMaybe<Array<Scalars['String']>>;
+  tokenAddress_contains?: InputMaybe<Scalars['String']>;
+  tokenAddress_contains_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_contains?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_starts_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_starts_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_ends_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_ends_with?: InputMaybe<Scalars['String']>;
+  tokenAddress_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey?: InputMaybe<Scalars['String']>;
+  timeKey_not?: InputMaybe<Scalars['String']>;
+  timeKey_gt?: InputMaybe<Scalars['String']>;
+  timeKey_lt?: InputMaybe<Scalars['String']>;
+  timeKey_gte?: InputMaybe<Scalars['String']>;
+  timeKey_lte?: InputMaybe<Scalars['String']>;
+  timeKey_in?: InputMaybe<Array<Scalars['String']>>;
+  timeKey_not_in?: InputMaybe<Array<Scalars['String']>>;
+  timeKey_contains?: InputMaybe<Scalars['String']>;
+  timeKey_contains_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_contains?: InputMaybe<Scalars['String']>;
+  timeKey_not_contains_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_starts_with?: InputMaybe<Scalars['String']>;
+  timeKey_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_starts_with?: InputMaybe<Scalars['String']>;
+  timeKey_not_starts_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_ends_with?: InputMaybe<Scalars['String']>;
+  timeKey_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  timeKey_not_ends_with?: InputMaybe<Scalars['String']>;
+  timeKey_not_ends_with_nocase?: InputMaybe<Scalars['String']>;
+  value?: InputMaybe<Scalars['BigInt']>;
+  value_not?: InputMaybe<Scalars['BigInt']>;
+  value_gt?: InputMaybe<Scalars['BigInt']>;
+  value_lt?: InputMaybe<Scalars['BigInt']>;
+  value_gte?: InputMaybe<Scalars['BigInt']>;
+  value_lte?: InputMaybe<Scalars['BigInt']>;
+  value_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  value_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  claimed?: InputMaybe<Scalars['Boolean']>;
+  claimed_not?: InputMaybe<Scalars['Boolean']>;
+  claimed_in?: InputMaybe<Array<Scalars['Boolean']>>;
+  claimed_not_in?: InputMaybe<Array<Scalars['Boolean']>>;
+  factor?: InputMaybe<Scalars['BigInt']>;
+  factor_not?: InputMaybe<Scalars['BigInt']>;
+  factor_gt?: InputMaybe<Scalars['BigInt']>;
+  factor_lt?: InputMaybe<Scalars['BigInt']>;
+  factor_gte?: InputMaybe<Scalars['BigInt']>;
+  factor_lte?: InputMaybe<Scalars['BigInt']>;
+  factor_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  factor_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  factorByTime?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_not?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_gt?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_lt?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_gte?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_lte?: InputMaybe<Scalars['BigInt']>;
+  factorByTime_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  factorByTime_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  /** Filter for the block changed event. */
+  _change_block?: InputMaybe<BlockChangedFilter>;
+  and?: InputMaybe<Array<InputMaybe<ClaimableCollateral_filter>>>;
+  or?: InputMaybe<Array<InputMaybe<ClaimableCollateral_filter>>>;
+};
+
+export type ClaimableCollateral_orderBy =
+  | 'id'
+  | 'account'
+  | 'marketAddress'
+  | 'tokenAddress'
+  | 'timeKey'
+  | 'value'
+  | 'claimed'
+  | 'factor'
+  | 'factorByTime';
 
 export type ClaimableFundingFeeInfo = {
   id: Scalars['ID'];
@@ -2548,6 +2926,9 @@ export type PositionIncrease = {
   collateralTokenAddress: Scalars['String'];
   collateralTokenPriceMin: Scalars['BigInt'];
   collateralTokenPriceMax: Scalars['BigInt'];
+  indexTokenPriceMin: Scalars['BigInt'];
+  indexTokenPriceMax: Scalars['BigInt'];
+  fundingFeeAmountPerSize: Scalars['BigInt'];
   sizeInUsd: Scalars['BigInt'];
   sizeInTokens: Scalars['BigInt'];
   collateralAmount: Scalars['BigInt'];
@@ -2555,14 +2936,12 @@ export type PositionIncrease = {
   sizeDeltaInTokens: Scalars['BigInt'];
   collateralDeltaAmount: Scalars['BigInt'];
   executionPrice: Scalars['BigInt'];
-  priceImpactDiffUsd: Scalars['BigInt'];
   orderType: Scalars['BigInt'];
   borrowingFactor: Scalars['BigInt'];
-  longTokenFundingAmountPerSize: Scalars['BigInt'];
-  shortTokenFundingAmountPerSize: Scalars['BigInt'];
+  longTokenFundingAmountPerSize?: Maybe<Scalars['BigInt']>;
+  shortTokenFundingAmountPerSize?: Maybe<Scalars['BigInt']>;
   priceImpactAmount: Scalars['BigInt'];
   priceImpactUsd: Scalars['BigInt'];
-  basePnlUsd: Scalars['BigInt'];
   isLong: Scalars['Boolean'];
   transaction?: Maybe<Transaction>;
 };
@@ -2692,6 +3071,30 @@ export type PositionIncrease_filter = {
   collateralTokenPriceMax_lte?: InputMaybe<Scalars['BigInt']>;
   collateralTokenPriceMax_in?: InputMaybe<Array<Scalars['BigInt']>>;
   collateralTokenPriceMax_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  indexTokenPriceMin?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_not?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_gt?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_lt?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_gte?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_lte?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMin_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  indexTokenPriceMin_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  indexTokenPriceMax?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_not?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_gt?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_lt?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_gte?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_lte?: InputMaybe<Scalars['BigInt']>;
+  indexTokenPriceMax_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  indexTokenPriceMax_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  fundingFeeAmountPerSize?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_not?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_gt?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_lt?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_gte?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_lte?: InputMaybe<Scalars['BigInt']>;
+  fundingFeeAmountPerSize_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  fundingFeeAmountPerSize_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
   sizeInUsd?: InputMaybe<Scalars['BigInt']>;
   sizeInUsd_not?: InputMaybe<Scalars['BigInt']>;
   sizeInUsd_gt?: InputMaybe<Scalars['BigInt']>;
@@ -2748,14 +3151,6 @@ export type PositionIncrease_filter = {
   executionPrice_lte?: InputMaybe<Scalars['BigInt']>;
   executionPrice_in?: InputMaybe<Array<Scalars['BigInt']>>;
   executionPrice_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
-  priceImpactDiffUsd?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_not?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_gt?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_lt?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_gte?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_lte?: InputMaybe<Scalars['BigInt']>;
-  priceImpactDiffUsd_in?: InputMaybe<Array<Scalars['BigInt']>>;
-  priceImpactDiffUsd_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
   orderType?: InputMaybe<Scalars['BigInt']>;
   orderType_not?: InputMaybe<Scalars['BigInt']>;
   orderType_gt?: InputMaybe<Scalars['BigInt']>;
@@ -2804,14 +3199,6 @@ export type PositionIncrease_filter = {
   priceImpactUsd_lte?: InputMaybe<Scalars['BigInt']>;
   priceImpactUsd_in?: InputMaybe<Array<Scalars['BigInt']>>;
   priceImpactUsd_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
-  basePnlUsd?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_not?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_gt?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_lt?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_gte?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_lte?: InputMaybe<Scalars['BigInt']>;
-  basePnlUsd_in?: InputMaybe<Array<Scalars['BigInt']>>;
-  basePnlUsd_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
   isLong?: InputMaybe<Scalars['Boolean']>;
   isLong_not?: InputMaybe<Scalars['Boolean']>;
   isLong_in?: InputMaybe<Array<Scalars['Boolean']>>;
@@ -2852,6 +3239,9 @@ export type PositionIncrease_orderBy =
   | 'collateralTokenAddress'
   | 'collateralTokenPriceMin'
   | 'collateralTokenPriceMax'
+  | 'indexTokenPriceMin'
+  | 'indexTokenPriceMax'
+  | 'fundingFeeAmountPerSize'
   | 'sizeInUsd'
   | 'sizeInTokens'
   | 'collateralAmount'
@@ -2859,14 +3249,12 @@ export type PositionIncrease_orderBy =
   | 'sizeDeltaInTokens'
   | 'collateralDeltaAmount'
   | 'executionPrice'
-  | 'priceImpactDiffUsd'
   | 'orderType'
   | 'borrowingFactor'
   | 'longTokenFundingAmountPerSize'
   | 'shortTokenFundingAmountPerSize'
   | 'priceImpactAmount'
   | 'priceImpactUsd'
-  | 'basePnlUsd'
   | 'isLong'
   | 'transaction'
   | 'transaction__id'
@@ -2986,6 +3374,8 @@ export type PositionVolumeInfo_orderBy =
   | 'volumeUsd';
 
 export type Query = {
+  candle?: Maybe<Candle>;
+  candles: Array<Candle>;
   affiliateRewardUpdate?: Maybe<AffiliateRewardUpdate>;
   affiliateRewardUpdates: Array<AffiliateRewardUpdate>;
   order?: Maybe<Order>;
@@ -2996,6 +3386,10 @@ export type Query = {
   positionDecreases: Array<PositionDecrease>;
   positionFeesInfo?: Maybe<PositionFeesInfo>;
   positionFeesInfos: Array<PositionFeesInfo>;
+  claimableCollateral?: Maybe<ClaimableCollateral>;
+  claimableCollaterals: Array<ClaimableCollateral>;
+  claimableCollateralGroup?: Maybe<ClaimableCollateralGroup>;
+  claimableCollateralGroups: Array<ClaimableCollateralGroup>;
   swapInfo?: Maybe<SwapInfo>;
   swapInfos: Array<SwapInfo>;
   swapFeesInfo?: Maybe<SwapFeesInfo>;
@@ -3060,6 +3454,24 @@ export type Query = {
   distributions: Array<Distribution>;
   /** Access to subgraph metadata */
   _meta?: Maybe<_Meta_>;
+};
+
+
+export type QuerycandleArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type QuerycandlesArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Candle_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<Candle_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
 };
 
 
@@ -3148,6 +3560,42 @@ export type QuerypositionFeesInfosArgs = {
   orderBy?: InputMaybe<PositionFeesInfo_orderBy>;
   orderDirection?: InputMaybe<OrderDirection>;
   where?: InputMaybe<PositionFeesInfo_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type QueryclaimableCollateralArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type QueryclaimableCollateralsArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ClaimableCollateral_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<ClaimableCollateral_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type QueryclaimableCollateralGroupArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type QueryclaimableCollateralGroupsArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ClaimableCollateralGroup_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<ClaimableCollateralGroup_filter>;
   block?: InputMaybe<Block_height>;
   subgraphError?: _SubgraphErrorPolicy_;
 };
@@ -3780,6 +4228,8 @@ export type SellUSDG_orderBy =
   | 'feeBasisPoints';
 
 export type Subscription = {
+  candle?: Maybe<Candle>;
+  candles: Array<Candle>;
   affiliateRewardUpdate?: Maybe<AffiliateRewardUpdate>;
   affiliateRewardUpdates: Array<AffiliateRewardUpdate>;
   order?: Maybe<Order>;
@@ -3790,6 +4240,10 @@ export type Subscription = {
   positionDecreases: Array<PositionDecrease>;
   positionFeesInfo?: Maybe<PositionFeesInfo>;
   positionFeesInfos: Array<PositionFeesInfo>;
+  claimableCollateral?: Maybe<ClaimableCollateral>;
+  claimableCollaterals: Array<ClaimableCollateral>;
+  claimableCollateralGroup?: Maybe<ClaimableCollateralGroup>;
+  claimableCollateralGroups: Array<ClaimableCollateralGroup>;
   swapInfo?: Maybe<SwapInfo>;
   swapInfos: Array<SwapInfo>;
   swapFeesInfo?: Maybe<SwapFeesInfo>;
@@ -3854,6 +4308,24 @@ export type Subscription = {
   distributions: Array<Distribution>;
   /** Access to subgraph metadata */
   _meta?: Maybe<_Meta_>;
+};
+
+
+export type SubscriptioncandleArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type SubscriptioncandlesArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Candle_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<Candle_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
 };
 
 
@@ -3942,6 +4414,42 @@ export type SubscriptionpositionFeesInfosArgs = {
   orderBy?: InputMaybe<PositionFeesInfo_orderBy>;
   orderDirection?: InputMaybe<OrderDirection>;
   where?: InputMaybe<PositionFeesInfo_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type SubscriptionclaimableCollateralArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type SubscriptionclaimableCollateralsArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ClaimableCollateral_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<ClaimableCollateral_filter>;
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type SubscriptionclaimableCollateralGroupArgs = {
+  id: Scalars['ID'];
+  block?: InputMaybe<Block_height>;
+  subgraphError?: _SubgraphErrorPolicy_;
+};
+
+
+export type SubscriptionclaimableCollateralGroupsArgs = {
+  skip?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<ClaimableCollateralGroup_orderBy>;
+  orderDirection?: InputMaybe<OrderDirection>;
+  where?: InputMaybe<ClaimableCollateralGroup_filter>;
   block?: InputMaybe<Block_height>;
   subgraphError?: _SubgraphErrorPolicy_;
 };
@@ -5055,6 +5563,7 @@ export type TokenPrice = {
   id: Scalars['ID'];
   minPrice: Scalars['BigInt'];
   maxPrice: Scalars['BigInt'];
+  updateAt: Scalars['BigInt'];
 };
 
 export type TokenPrice_filter = {
@@ -5082,6 +5591,14 @@ export type TokenPrice_filter = {
   maxPrice_lte?: InputMaybe<Scalars['BigInt']>;
   maxPrice_in?: InputMaybe<Array<Scalars['BigInt']>>;
   maxPrice_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  updateAt?: InputMaybe<Scalars['BigInt']>;
+  updateAt_not?: InputMaybe<Scalars['BigInt']>;
+  updateAt_gt?: InputMaybe<Scalars['BigInt']>;
+  updateAt_lt?: InputMaybe<Scalars['BigInt']>;
+  updateAt_gte?: InputMaybe<Scalars['BigInt']>;
+  updateAt_lte?: InputMaybe<Scalars['BigInt']>;
+  updateAt_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  updateAt_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
   /** Filter for the block changed event. */
   _change_block?: InputMaybe<BlockChangedFilter>;
   and?: InputMaybe<Array<InputMaybe<TokenPrice_filter>>>;
@@ -5091,7 +5608,8 @@ export type TokenPrice_filter = {
 export type TokenPrice_orderBy =
   | 'id'
   | 'minPrice'
-  | 'maxPrice';
+  | 'maxPrice'
+  | 'updateAt';
 
 export type TradeAction = {
   id: Scalars['ID'];
@@ -5118,6 +5636,7 @@ export type TradeAction = {
   borrowingFeeAmount?: Maybe<Scalars['BigInt']>;
   fundingFeeAmount?: Maybe<Scalars['BigInt']>;
   pnlUsd?: Maybe<Scalars['BigInt']>;
+  basePnlUsd?: Maybe<Scalars['BigInt']>;
   isLong?: Maybe<Scalars['Boolean']>;
   minOutputAmount?: Maybe<Scalars['BigInt']>;
   executionAmountOut?: Maybe<Scalars['BigInt']>;
@@ -5385,6 +5904,14 @@ export type TradeAction_filter = {
   pnlUsd_lte?: InputMaybe<Scalars['BigInt']>;
   pnlUsd_in?: InputMaybe<Array<Scalars['BigInt']>>;
   pnlUsd_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  basePnlUsd?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_not?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_gt?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_lt?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_gte?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_lte?: InputMaybe<Scalars['BigInt']>;
+  basePnlUsd_in?: InputMaybe<Array<Scalars['BigInt']>>;
+  basePnlUsd_not_in?: InputMaybe<Array<Scalars['BigInt']>>;
   isLong?: InputMaybe<Scalars['Boolean']>;
   isLong_not?: InputMaybe<Scalars['Boolean']>;
   isLong_in?: InputMaybe<Array<Scalars['Boolean']>>;
@@ -5491,6 +6018,7 @@ export type TradeAction_orderBy =
   | 'borrowingFeeAmount'
   | 'fundingFeeAmount'
   | 'pnlUsd'
+  | 'basePnlUsd'
   | 'isLong'
   | 'minOutputAmount'
   | 'executionAmountOut'
@@ -6610,6 +7138,9 @@ export type ResolversTypes = ResolversObject<{
   Block_height: Block_height;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Bytes: ResolverTypeWrapper<Scalars['Bytes']>;
+  Candle: ResolverTypeWrapper<Candle>;
+  Candle_filter: Candle_filter;
+  Candle_orderBy: Candle_orderBy;
   ClaimAction: ResolverTypeWrapper<ClaimAction>;
   ClaimActionType: ClaimActionType;
   ClaimAction_filter: ClaimAction_filter;
@@ -6620,6 +7151,12 @@ export type ResolversTypes = ResolversObject<{
   ClaimRef: ResolverTypeWrapper<ClaimRef>;
   ClaimRef_filter: ClaimRef_filter;
   ClaimRef_orderBy: ClaimRef_orderBy;
+  ClaimableCollateral: ResolverTypeWrapper<ClaimableCollateral>;
+  ClaimableCollateralGroup: ResolverTypeWrapper<ClaimableCollateralGroup>;
+  ClaimableCollateralGroup_filter: ClaimableCollateralGroup_filter;
+  ClaimableCollateralGroup_orderBy: ClaimableCollateralGroup_orderBy;
+  ClaimableCollateral_filter: ClaimableCollateral_filter;
+  ClaimableCollateral_orderBy: ClaimableCollateral_orderBy;
   ClaimableFundingFeeInfo: ResolverTypeWrapper<ClaimableFundingFeeInfo>;
   ClaimableFundingFeeInfo_filter: ClaimableFundingFeeInfo_filter;
   ClaimableFundingFeeInfo_orderBy: ClaimableFundingFeeInfo_orderBy;
@@ -6741,12 +7278,18 @@ export type ResolversParentTypes = ResolversObject<{
   Block_height: Block_height;
   Boolean: Scalars['Boolean'];
   Bytes: Scalars['Bytes'];
+  Candle: Candle;
+  Candle_filter: Candle_filter;
   ClaimAction: ClaimAction;
   ClaimAction_filter: ClaimAction_filter;
   ClaimCollateralAction: ClaimCollateralAction;
   ClaimCollateralAction_filter: ClaimCollateralAction_filter;
   ClaimRef: ClaimRef;
   ClaimRef_filter: ClaimRef_filter;
+  ClaimableCollateral: ClaimableCollateral;
+  ClaimableCollateralGroup: ClaimableCollateralGroup;
+  ClaimableCollateralGroup_filter: ClaimableCollateralGroup_filter;
+  ClaimableCollateral_filter: ClaimableCollateral_filter;
   ClaimableFundingFeeInfo: ClaimableFundingFeeInfo;
   ClaimableFundingFeeInfo_filter: ClaimableFundingFeeInfo_filter;
   CollectedMarketFeesInfo: CollectedMarketFeesInfo;
@@ -6862,6 +7405,18 @@ export interface BytesScalarConfig extends GraphQLScalarTypeConfig<ResolversType
   name: 'Bytes';
 }
 
+export type CandleResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Candle'] = ResolversParentTypes['Candle']> = ResolversObject<{
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  marketAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  period?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  timestamp?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  open?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  close?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  high?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  low?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
 export type ClaimActionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['ClaimAction'] = ResolversParentTypes['ClaimAction']> = ResolversObject<{
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   eventName?: Resolver<ResolversTypes['ClaimActionType'], ParentType, ContextType>;
@@ -6887,6 +7442,29 @@ export type ClaimCollateralActionResolvers<ContextType = MeshContext, ParentType
 
 export type ClaimRefResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['ClaimRef'] = ResolversParentTypes['ClaimRef']> = ResolversObject<{
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type ClaimableCollateralResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['ClaimableCollateral'] = ResolversParentTypes['ClaimableCollateral']> = ResolversObject<{
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  account?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  marketAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  tokenAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  timeKey?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  value?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  claimed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  factor?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  factorByTime?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type ClaimableCollateralGroupResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['ClaimableCollateralGroup'] = ResolversParentTypes['ClaimableCollateralGroup']> = ResolversObject<{
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  timeKey?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  marketAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  tokenAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  factor?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  claimables?: Resolver<Array<ResolversTypes['ClaimableCollateral']>, ParentType, ContextType, RequireFields<ClaimableCollateralGroupclaimablesArgs, 'skip' | 'first'>>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
@@ -7096,6 +7674,9 @@ export type PositionIncreaseResolvers<ContextType = MeshContext, ParentType exte
   collateralTokenAddress?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   collateralTokenPriceMin?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   collateralTokenPriceMax?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  indexTokenPriceMin?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  indexTokenPriceMax?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  fundingFeeAmountPerSize?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   sizeInUsd?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   sizeInTokens?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   collateralAmount?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
@@ -7103,14 +7684,12 @@ export type PositionIncreaseResolvers<ContextType = MeshContext, ParentType exte
   sizeDeltaInTokens?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   collateralDeltaAmount?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   executionPrice?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  priceImpactDiffUsd?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   orderType?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   borrowingFactor?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  longTokenFundingAmountPerSize?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  shortTokenFundingAmountPerSize?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  longTokenFundingAmountPerSize?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
+  shortTokenFundingAmountPerSize?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
   priceImpactAmount?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   priceImpactUsd?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
-  basePnlUsd?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   isLong?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   transaction?: Resolver<Maybe<ResolversTypes['Transaction']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
@@ -7127,6 +7706,8 @@ export type PositionVolumeInfoResolvers<ContextType = MeshContext, ParentType ex
 }>;
 
 export type QueryResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
+  candle?: Resolver<Maybe<ResolversTypes['Candle']>, ParentType, ContextType, RequireFields<QuerycandleArgs, 'id' | 'subgraphError'>>;
+  candles?: Resolver<Array<ResolversTypes['Candle']>, ParentType, ContextType, RequireFields<QuerycandlesArgs, 'skip' | 'first' | 'subgraphError'>>;
   affiliateRewardUpdate?: Resolver<Maybe<ResolversTypes['AffiliateRewardUpdate']>, ParentType, ContextType, RequireFields<QueryaffiliateRewardUpdateArgs, 'id' | 'subgraphError'>>;
   affiliateRewardUpdates?: Resolver<Array<ResolversTypes['AffiliateRewardUpdate']>, ParentType, ContextType, RequireFields<QueryaffiliateRewardUpdatesArgs, 'skip' | 'first' | 'subgraphError'>>;
   order?: Resolver<Maybe<ResolversTypes['Order']>, ParentType, ContextType, RequireFields<QueryorderArgs, 'id' | 'subgraphError'>>;
@@ -7137,6 +7718,10 @@ export type QueryResolvers<ContextType = MeshContext, ParentType extends Resolve
   positionDecreases?: Resolver<Array<ResolversTypes['PositionDecrease']>, ParentType, ContextType, RequireFields<QuerypositionDecreasesArgs, 'skip' | 'first' | 'subgraphError'>>;
   positionFeesInfo?: Resolver<Maybe<ResolversTypes['PositionFeesInfo']>, ParentType, ContextType, RequireFields<QuerypositionFeesInfoArgs, 'id' | 'subgraphError'>>;
   positionFeesInfos?: Resolver<Array<ResolversTypes['PositionFeesInfo']>, ParentType, ContextType, RequireFields<QuerypositionFeesInfosArgs, 'skip' | 'first' | 'subgraphError'>>;
+  claimableCollateral?: Resolver<Maybe<ResolversTypes['ClaimableCollateral']>, ParentType, ContextType, RequireFields<QueryclaimableCollateralArgs, 'id' | 'subgraphError'>>;
+  claimableCollaterals?: Resolver<Array<ResolversTypes['ClaimableCollateral']>, ParentType, ContextType, RequireFields<QueryclaimableCollateralsArgs, 'skip' | 'first' | 'subgraphError'>>;
+  claimableCollateralGroup?: Resolver<Maybe<ResolversTypes['ClaimableCollateralGroup']>, ParentType, ContextType, RequireFields<QueryclaimableCollateralGroupArgs, 'id' | 'subgraphError'>>;
+  claimableCollateralGroups?: Resolver<Array<ResolversTypes['ClaimableCollateralGroup']>, ParentType, ContextType, RequireFields<QueryclaimableCollateralGroupsArgs, 'skip' | 'first' | 'subgraphError'>>;
   swapInfo?: Resolver<Maybe<ResolversTypes['SwapInfo']>, ParentType, ContextType, RequireFields<QueryswapInfoArgs, 'id' | 'subgraphError'>>;
   swapInfos?: Resolver<Array<ResolversTypes['SwapInfo']>, ParentType, ContextType, RequireFields<QueryswapInfosArgs, 'skip' | 'first' | 'subgraphError'>>;
   swapFeesInfo?: Resolver<Maybe<ResolversTypes['SwapFeesInfo']>, ParentType, ContextType, RequireFields<QueryswapFeesInfoArgs, 'id' | 'subgraphError'>>;
@@ -7211,6 +7796,8 @@ export type SellUSDGResolvers<ContextType = MeshContext, ParentType extends Reso
 }>;
 
 export type SubscriptionResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = ResolversObject<{
+  candle?: SubscriptionResolver<Maybe<ResolversTypes['Candle']>, "candle", ParentType, ContextType, RequireFields<SubscriptioncandleArgs, 'id' | 'subgraphError'>>;
+  candles?: SubscriptionResolver<Array<ResolversTypes['Candle']>, "candles", ParentType, ContextType, RequireFields<SubscriptioncandlesArgs, 'skip' | 'first' | 'subgraphError'>>;
   affiliateRewardUpdate?: SubscriptionResolver<Maybe<ResolversTypes['AffiliateRewardUpdate']>, "affiliateRewardUpdate", ParentType, ContextType, RequireFields<SubscriptionaffiliateRewardUpdateArgs, 'id' | 'subgraphError'>>;
   affiliateRewardUpdates?: SubscriptionResolver<Array<ResolversTypes['AffiliateRewardUpdate']>, "affiliateRewardUpdates", ParentType, ContextType, RequireFields<SubscriptionaffiliateRewardUpdatesArgs, 'skip' | 'first' | 'subgraphError'>>;
   order?: SubscriptionResolver<Maybe<ResolversTypes['Order']>, "order", ParentType, ContextType, RequireFields<SubscriptionorderArgs, 'id' | 'subgraphError'>>;
@@ -7221,6 +7808,10 @@ export type SubscriptionResolvers<ContextType = MeshContext, ParentType extends 
   positionDecreases?: SubscriptionResolver<Array<ResolversTypes['PositionDecrease']>, "positionDecreases", ParentType, ContextType, RequireFields<SubscriptionpositionDecreasesArgs, 'skip' | 'first' | 'subgraphError'>>;
   positionFeesInfo?: SubscriptionResolver<Maybe<ResolversTypes['PositionFeesInfo']>, "positionFeesInfo", ParentType, ContextType, RequireFields<SubscriptionpositionFeesInfoArgs, 'id' | 'subgraphError'>>;
   positionFeesInfos?: SubscriptionResolver<Array<ResolversTypes['PositionFeesInfo']>, "positionFeesInfos", ParentType, ContextType, RequireFields<SubscriptionpositionFeesInfosArgs, 'skip' | 'first' | 'subgraphError'>>;
+  claimableCollateral?: SubscriptionResolver<Maybe<ResolversTypes['ClaimableCollateral']>, "claimableCollateral", ParentType, ContextType, RequireFields<SubscriptionclaimableCollateralArgs, 'id' | 'subgraphError'>>;
+  claimableCollaterals?: SubscriptionResolver<Array<ResolversTypes['ClaimableCollateral']>, "claimableCollaterals", ParentType, ContextType, RequireFields<SubscriptionclaimableCollateralsArgs, 'skip' | 'first' | 'subgraphError'>>;
+  claimableCollateralGroup?: SubscriptionResolver<Maybe<ResolversTypes['ClaimableCollateralGroup']>, "claimableCollateralGroup", ParentType, ContextType, RequireFields<SubscriptionclaimableCollateralGroupArgs, 'id' | 'subgraphError'>>;
+  claimableCollateralGroups?: SubscriptionResolver<Array<ResolversTypes['ClaimableCollateralGroup']>, "claimableCollateralGroups", ParentType, ContextType, RequireFields<SubscriptionclaimableCollateralGroupsArgs, 'skip' | 'first' | 'subgraphError'>>;
   swapInfo?: SubscriptionResolver<Maybe<ResolversTypes['SwapInfo']>, "swapInfo", ParentType, ContextType, RequireFields<SubscriptionswapInfoArgs, 'id' | 'subgraphError'>>;
   swapInfos?: SubscriptionResolver<Array<ResolversTypes['SwapInfo']>, "swapInfos", ParentType, ContextType, RequireFields<SubscriptionswapInfosArgs, 'skip' | 'first' | 'subgraphError'>>;
   swapFeesInfo?: SubscriptionResolver<Maybe<ResolversTypes['SwapFeesInfo']>, "swapFeesInfo", ParentType, ContextType, RequireFields<SubscriptionswapFeesInfoArgs, 'id' | 'subgraphError'>>;
@@ -7337,6 +7928,7 @@ export type TokenPriceResolvers<ContextType = MeshContext, ParentType extends Re
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   minPrice?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   maxPrice?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
+  updateAt?: Resolver<ResolversTypes['BigInt'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
@@ -7365,6 +7957,7 @@ export type TradeActionResolvers<ContextType = MeshContext, ParentType extends R
   borrowingFeeAmount?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
   fundingFeeAmount?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
   pnlUsd?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
+  basePnlUsd?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
   isLong?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType>;
   minOutputAmount?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
   executionAmountOut?: Resolver<Maybe<ResolversTypes['BigInt']>, ParentType, ContextType>;
@@ -7499,9 +8092,12 @@ export type Resolvers<ContextType = MeshContext> = ResolversObject<{
   BigDecimal?: GraphQLScalarType;
   BigInt?: GraphQLScalarType;
   Bytes?: GraphQLScalarType;
+  Candle?: CandleResolvers<ContextType>;
   ClaimAction?: ClaimActionResolvers<ContextType>;
   ClaimCollateralAction?: ClaimCollateralActionResolvers<ContextType>;
   ClaimRef?: ClaimRefResolvers<ContextType>;
+  ClaimableCollateral?: ClaimableCollateralResolvers<ContextType>;
+  ClaimableCollateralGroup?: ClaimableCollateralGroupResolvers<ContextType>;
   ClaimableFundingFeeInfo?: ClaimableFundingFeeInfoResolvers<ContextType>;
   CollectedMarketFeesInfo?: CollectedMarketFeesInfoResolvers<ContextType>;
   DepositRef?: DepositRefResolvers<ContextType>;
@@ -7592,7 +8188,7 @@ const tperpSubgraphTransforms = [];
 const additionalTypeDefs = [] as any[];
 const tperpSubgraphHandler = new GraphqlHandler({
               name: "tperp-subgraph",
-              config: {"endpoint":"https://api.thegraph.com/subgraphs/name/tideassets/tperp-subgraph"},
+              config: {"endpoint":"http://127.0.0.1:8000/subgraphs/name/example/"},
               baseDir,
               cache,
               pubsub,
